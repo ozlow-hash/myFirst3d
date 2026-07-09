@@ -1,6 +1,7 @@
-extends Node3D
+extends CharacterBody3D
 
-#var direction = 
+var bullet_velocity: Vector3
+var damage: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,4 +10,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	#position += transform.basis * Vector3(0, 0, -bullet_velocity) * delta
+	pass
+
+func _physics_process(delta: float) -> void:
 	pass
