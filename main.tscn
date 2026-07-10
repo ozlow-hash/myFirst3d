@@ -26,8 +26,19 @@ shadow_enabled = true
 [node name="ProtoController" parent="." unique_id=1592278700 instance=ExtResource("1_ig7tw")]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=999509091]
-transform = Transform3D(16.427011, 0, 0, 0, 0.35196054, 0, 0, 0, 16.699625, 0, 0, 0)
+transform = Transform3D(16.427011, 0, 0, 0, 0.35196054, 0, 0, 0, 16.699625, 0, 0, -2.0018349)
 use_collision = true
+size = Vector3(1.8544922, 1, 1.2397461)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1940649800]
+transform = Transform3D(16.14838, 0, 0, 0, 3.3859043, 0, 0, 0, 0.2770793, 3.91635, 0.7323798, 3.2348032)
+use_collision = true
+size = Vector3(0.10571289, 0.3067932, 5.193115)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=158531240]
+transform = Transform3D(16.14838, 0, 0, 0, 3.3859043, 0, 0, 0, 0.2770793, 3.91635, 0.7323798, -2.1941242)
+use_collision = true
+size = Vector3(0.10571289, 0.3067932, 5.193115)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1996821507]
 transform = Transform3D(16.14838, 0, 0, 0, 3.385905, 0, 0, 0, 0.2770793, 0, 1.8594792, -8.138812)

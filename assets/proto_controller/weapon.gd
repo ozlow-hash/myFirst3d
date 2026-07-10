@@ -1,5 +1,6 @@
 extends Node3D
 
+@export var bullet_speed: float = 25.0
 @export var bullet_scene = preload("res://assets/bullet.tscn")
 @onready var muzzle = $"../Marker3D"
 @onready var camera_dir = $".."
@@ -20,4 +21,6 @@ func shoot():
 	
 	bullet.global_transform = muzzle.global_transform
 	get_tree().current_scene.add_child(bullet)
+	
+	bullet.linear_velocity = -muzzle.global_transform.basis.z * bullet_speed
 	print(aim_dir)
