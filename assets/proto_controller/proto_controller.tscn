@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bs72ogkvdd7d6"]
 
 [ext_resource type="Script" uid="uid://ddh0bjj2rjxns" path="res://assets/proto_controller/proto_controller.gd" id="1_ahkrs"]
+[ext_resource type="Script" uid="uid://b450ih65mjem8" path="res://assets/proto_controller/weapon_manager.gd" id="2_0oyov"]
 [ext_resource type="Script" uid="uid://dpre2why1310w" path="res://assets/weapons/weaponManager.gd" id="2_4mlut"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
@@ -33,6 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1622195760]
 
 [node name="WeaponManager" type="Node3D" parent="Head/Camera3D" unique_id=1336591783]
+script = ExtResource("2_0oyov")
 
 [node name="Weapon" type="CSGCylinder3D" parent="Head/Camera3D" unique_id=967075008]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.58705914, -0.39032054, -0.98265445)
