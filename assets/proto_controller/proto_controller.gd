@@ -5,7 +5,9 @@
 
 extends CharacterBody3D
 
-@onready var weapon = $Head/Camera3D/Weapon
+signal weaponswitch
+
+@onready var weaponManager = $Head/Camera3D/WeaponManager
 
 ## Can we move around?
 @export var can_move : bool = true
@@ -45,6 +47,8 @@ extends CharacterBody3D
 @export var input_sprint : String = "sprint"
 ## Name of Input Action to toggle freefly mode.
 @export var input_freefly : String = "freefly"
+## Name of Input Action to swtich weapon
+@export var input_switch : String = "switch_weapon"
 
 var mouse_captured : bool = false
 var look_rotation : Vector2
@@ -62,7 +66,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot"):
-		weapon.shoot()
+		weaponManager.shoot()
 	# Mouse capturing
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		capture_mouse()
@@ -79,6 +83,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			enable_freefly()
 		else:
 			disable_freefly()
+			
+	#switch weapon
+	if Input.is_action_just_pressed(input_switch):
+		weaponswitch.emit()
+		
 
 func _physics_process(delta: float) -> void:
 	# If freeflying, handle freefly and nothing else
@@ -98,6 +107,8 @@ func _physics_process(delta: float) -> void:
 	if can_jump:
 		if Input.is_action_just_pressed(input_jump) and is_on_floor():
 			velocity.y = jump_velocity
+		if is_on_floor() == false:
+			velocity.x = 0
 
 	# Modify speed based on sprinting
 	if can_sprint and Input.is_action_pressed(input_sprint):

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dw4pxm62j7qan"]
+
+[ext_resource type="Script" uid="uid://q3f33s5lpx5d" path="res://assets/weapons/weaponData.gd" id="1_sqyuf"]
+
+[resource]
+script = ExtResource("1_sqyuf")
+weapon_name = "CylinderGun"
+metadata/_custom_type_script = "uid://q3f33s5lpx5d"
